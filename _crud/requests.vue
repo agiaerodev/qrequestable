@@ -29,7 +29,7 @@ export default {
           to: {name: 'qrequestable.main.requestables.create'}
         },
         read: {
-          showAs: this.isMobile ? 'table' : 'kanban',
+          
           columns: [
             {name: 'id', label: this.$tr('isite.cms.form.id'), field: 'id', sortable: true, align: 'left'},
             {

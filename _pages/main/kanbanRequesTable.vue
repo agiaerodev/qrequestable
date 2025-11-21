@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <p>page</p>
+  <div>    
     <dynamicKanban
       :crudData="import('modules/qrequestable/_crud/requests.vue')"      
       :title="$tr($route.meta.title)"
     />
-
 
     <dynamicKanban
       :crudData="import('modules/qrequestable/_crud/requests.vue')"      
