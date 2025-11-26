@@ -5,10 +5,7 @@
       :title="$tr($route.meta.title)"
     />
 
-    <dynamicKanban
-      :crudData="import('modules/qrequestable/_crud/requests.vue')"      
-      title="'--kanban dynamic test'"
-    />
+    
   </div>
 </template>
 <script>
