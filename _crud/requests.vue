@@ -2,6 +2,8 @@
 <script>
 //Components
 import fileList from 'modules/qsite/_components/master/fileList'
+
+import { defineAsyncComponent} from "vue";
 export default {
   components: {fileList},
   data() {
@@ -29,7 +31,7 @@ export default {
           to: {name: 'qrequestable.main.requestables.create'}
         },
         read: {
-          
+          showAs: 'kanban',
           columns: [
             {name: 'id', label: this.$tr('isite.cms.form.id'), field: 'id', sortable: true, align: 'left'},
             {
@@ -65,6 +67,12 @@ export default {
             filter: {}
           },
           kanban: {
+            cardComponent: {
+              header: defineAsyncComponent(() => import('../_components/kanbanCard/header')), 
+              content: defineAsyncComponent(() => import('../_components/kanbanCard/content')), 
+              
+            },
+
                 column: {
                   filter:{
                     name: 'categoryId'
@@ -300,6 +308,7 @@ export default {
     async getCategories() {
       try {
         const response = await this.$crud.index('apiRoutes.qrequestable.categories');
+        
         this.listOfCategories = response.data;
       } catch (error) {
         this.$apiResponse.handleError(error, () => {

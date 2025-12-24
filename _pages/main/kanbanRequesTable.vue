@@ -15,11 +15,6 @@ import dynamicKanban from 'modules/qsite/_components/master/dynamickanban/index.
 
 
 export default {
-  components: { dynamicKanban },
-  data() {
-    return {
-      showAsKanban: true
-    };
-  }  
+  components: { dynamicKanban }  
 };
 </script>
