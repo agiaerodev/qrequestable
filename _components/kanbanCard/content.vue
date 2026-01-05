@@ -1,8 +1,7 @@
 <template>
 
 <div >
-
-  <p>testing card</p>
+  
     <div
       v-if="data?.type"
       class="
@@ -62,14 +61,24 @@
       </span>
     </div>
 
+
+     <footerComponent 
+      :data="data"
+     />
+
     </div>
 
 
 </template>
 <script>
 
+  import footerComponent from './footer.vue';
+
 
   export default {
+    components: {
+      footerComponent
+    },
     props: {
       data: {
         type: Object,

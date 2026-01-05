@@ -67,10 +67,22 @@ export default {
             filter: {}
           },
           kanban: {
-            cardComponent: {
+            //columnWidht: 'tw-w-80',
+            
+            cardComponent: {              
               header: defineAsyncComponent(() => import('../_components/kanbanCard/header')), 
-              content: defineAsyncComponent(() => import('../_components/kanbanCard/content')), 
-              
+              content: defineAsyncComponent(() => import('../_components/kanbanCard/content')),              
+            },
+            permissions: {
+              column: {
+
+              }, 
+              card: {
+                index: this.$hasAccess('requestable.requestables.index'),
+                create: this.$hasAccess('requestable.requestables.create'),
+                edit: this.$hasAccess('requestable.requestables.edit'),
+                delete: this.$hasAccess('requestable.requestables.delete')
+              }
             },
 
                 column: {
